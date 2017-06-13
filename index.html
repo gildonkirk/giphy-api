@@ -23,25 +23,26 @@
 
 		var topicChoice = '';
 
-		var queryURL = ''
+		var queryURL = '';
 
 		$('.buttonTopic').on('click', function(){
+			$('#response').html('');
 			var topicChoice = $(this).html();
+			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topicChoice + "&api_key=dc6zaTOxFJmzC"
+			$.ajax({
+				url:queryURL, 
+				method:'GET'
+			}).done(function(response){
+				for(i = 0; i < 10; i++){
+        		var image = $('<img>');
+        		image.attr('src', response.data[i].images.fixed_height.url);
+        		$('#response').append(image);
+      			};	
+			});
 		});
 
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topicChoice + "&api_key=dc6zaTOxFJmzC"
 		console.log(queryURL);
 
-		$.ajax({
-			url:queryURL, 
-			method:'GET'
-		}).done(function(response){
-			for(i = 0; i < 10; i++){
-        	var image = $('<img>');
-        	image.attr('src', response.data[i].images.fixed_height.url);
-        	$('body').append(image);
-      		};	
-		});
 	</script>
 </body>
 </html>
