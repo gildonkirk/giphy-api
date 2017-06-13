@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>giphy-api</title>
+</head>
+<body>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"
+  	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
+
+	<div id="buttons">
+	</div>
+	
+	<div id="response">
+	</div>
+
+	<script type="text/javascript">
+		var topics = ['tv', 'movies', 'sports', 'fargo', 'game of thrones', 'star wars', 'batman', 'x-men']
+		for(i = 0; i < topics.length; i++){
+			var button = $('<button class=buttonTopic>' + topics[i] + '</button>');
+			$('#buttons').append(button);
+		};
+
+		var topicChoice = '';
+
+		var queryURL = ''
+
+		$('.buttonTopic').on('click', function(){
+			var topicChoice = $(this).html();
+		});
+
+		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topicChoice + "&api_key=dc6zaTOxFJmzC"
+		console.log(queryURL);
+
+		$.ajax({
+			url:queryURL, 
+			method:'GET'
+		}).done(function(response){
+			for(i = 0; i < 10; i++){
+        	var image = $('<img>');
+        	image.attr('src', response.data[i].images.fixed_height.url);
+        	$('body').append(image);
+      		};	
+		});
+	</script>
+</body>
+</html>
