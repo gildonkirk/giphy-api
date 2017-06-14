@@ -8,6 +8,14 @@
   	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   	crossorigin="anonymous"></script>
 
+	<form id="movie-form">
+      <label for="movie-input">Search</label>
+      <input type="text" id="movie-input"><br>
+
+      
+      <input id="add-movie" type="submit" value="Enter">
+    </form>
+
 	<div id="buttons">
 	</div>
 	
@@ -17,7 +25,7 @@
 	<script type="text/javascript">
 		var topics = ['tv', 'movies', 'sports', 'fargo', 'game of thrones', 'star wars', 'batman', 'x-men']
 		for(i = 0; i < topics.length; i++){
-			var button = $('<button class=buttonTopic>' + topics[i] + '</button>');
+			var button = $('<button class=buttonTopic>').text(topics[i]);
 			$('#buttons').append(button);
 		};
 
@@ -25,9 +33,9 @@
 
 		var queryURL = '';
 
-		$('.buttonTopic').on('click', function(){
+		$(document).on('click', '.buttonTopic', function(){
 			$('#response').html('');
-			var topicChoice = $(this).html();
+			var topicChoice = $(this).text();
 			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topicChoice + "&api_key=dc6zaTOxFJmzC"
 			$.ajax({
 				url:queryURL, 
@@ -35,11 +43,19 @@
 			}).done(function(response){
 				for(i = 0; i < 10; i++){
         		var image = $('<img>');
-        		image.attr('src', response.data[i].images.fixed_height.url);
+        		image.attr('src', response.data[i].images.fixed_height_still.url);
         		$('#response').append(image);
       			};	
 			});
 		});
+
+		$("#add-movie").on("click", function() {
+        // This function below prevents the page from reloading
+          event.preventDefault(); 
+          var input = $('#movie-input').val()
+          var button1 = $('<button class=buttonTopic>').text(input)
+          $('#buttons').append(button1)
+      	});
 
 		console.log(queryURL);
 
