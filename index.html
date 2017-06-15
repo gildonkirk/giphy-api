@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>giphy-api</title>
+	<link href="./style.css" rel="stylesheet" type="text/css"></link>
 </head>
 <body>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -13,7 +14,7 @@
       <input type="text" id="movie-input"><br>
 
       
-      <input id="add-movie" type="submit" value="Enter">
+      <input id="add-movie" type="submit" value="Add Button">
     </form>
 
 	<div id="buttons">
@@ -42,9 +43,17 @@
 				method:'GET'
 			}).done(function(response){
 				for(i = 0; i < 10; i++){
+
+				var container = $('<div>').addClass('img-container');
         		var image = $('<img>');
         		image.attr('src', response.data[i].images.fixed_height_still.url);
-        		$('#response').append(image);
+        		image.addClass('lol');
+        		container.append(image);
+        		container.append('<p>Rating: ' + response.data[i].rating + '</p>');
+
+
+        		$('#response').append(container);
+        		
       			};	
 			});
 		});
