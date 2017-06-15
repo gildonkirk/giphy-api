@@ -10,10 +10,8 @@
   	crossorigin="anonymous"></script>
 
 	<form id="movie-form">
-      <label for="movie-input">Search</label>
-      <input type="text" id="movie-input"><br>
-
-      
+      <label for="movie-input">Search</label><br>
+      <input type="text" id="movie-input">
       <input id="add-movie" type="submit" value="Add Button">
     </form>
 
@@ -24,7 +22,7 @@
 	</div>
 
 	<script type="text/javascript">
-		var topics = ['tv', 'movies', 'sports', 'fargo', 'game of thrones', 'star wars', 'batman', 'x-men']
+		var topics = ['big lebowski', 'game of thrones', 'star wars', 'batman', 'x-men', 'fargo', 'pulp fiction']
 		for(i = 0; i < topics.length; i++){
 			var button = $('<button class=buttonTopic>').text(topics[i]);
 			$('#buttons').append(button);
@@ -33,6 +31,12 @@
 		var topicChoice = '';
 
 		var queryURL = '';
+
+		var clicked = false;
+
+		$(document).on('click', 'img', function(){
+			clicked = !clicked;
+		});
 
 		$(document).on('click', '.buttonTopic', function(){
 			$('#response').html('');
@@ -46,7 +50,16 @@
 
 				var container = $('<div>').addClass('img-container');
         		var image = $('<img>');
-        		image.attr('src', response.data[i].images.fixed_height_still.url);
+        		var imageAttr = image.attr('src', response.data[i].images.fixed_height_still.url);
+        		var imageAttrClick = image.attr('src', response.data[i].images.fixed_height.url);
+
+        		// WHY DOESN'T THIS WORK AND WHY DOES IT DEFAULT TO ANIMATED GIFS?
+        		if (clicked === true){
+					imageAttrClick;
+				} else {
+					imageAttr;
+				};
+
         		image.addClass('lol');
         		container.append(image);
         		container.append('<p>Rating: ' + response.data[i].rating + '</p>');
@@ -57,6 +70,8 @@
       			};	
 			});
 		});
+		
+		
 
 		$("#add-movie").on("click", function() {
         // This function below prevents the page from reloading

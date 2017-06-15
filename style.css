@@ -1,8 +1,40 @@
+#movie-form {
+	position: relative;
+}
+
+label, #add-movie {
+	margin-left: 10px;
+}
+
+label{
+    position: absolute;
+    top: 0px;
+}
+
+#movie-input {
+	margin-left: 10px;
+}
+
+#add-movie {
+	margin: 0px 0 10px 3px;
+    position: absolute;
+    top: 18.5px;
+}
+
+#buttons {
+	margin: 10px 0 15px 10px;
+}
+
+.buttonTopic {
+	margin-right: 3px;
+}
+
 .img-container {
 	display: inline-block;
 	float: left;
 	margin: 0 10px;
 }
+
 
 p {
 	text-align: center;
