@@ -42,7 +42,7 @@
 		$(document).on('click', '.buttonTopic', function(){
 			$('#response').html('');
 			var topicChoice = $(this).text();
-			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topicChoice + "&api_key=dc6zaTOxFJmzC"
+			var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topicChoice + "&api_key=dc6zaTOxFJmzC"
 			$.ajax({
 				url:queryURL, 
 				method:'GET'
