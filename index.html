@@ -52,11 +52,11 @@
 				var container = $('<div>').addClass('img-container');
         		var image = $('<img>');
 
-        		// this chooses the one that is false because it sees it as not being clicked.  does not change when clicked because it would need to re-GET the response.
-        		if (clicked == true){
-        			image.attr('src', response.data[i].images.fixed_height.url);
-        		} else {
+        		// this chooses the one that is false because it sees it as not being clicked.  does not change when clicked.
+        		if (clicked == false){
         			image.attr('src', response.data[i].images.fixed_height_still.url);
+        		} else {
+        			image.attr('src', response.data[i].images.fixed_height.url);
         		}
 
         		image.addClass('lol');
