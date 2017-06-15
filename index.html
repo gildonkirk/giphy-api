@@ -34,9 +34,21 @@
 
 		var clicked = false;
 
+
 		$(document).on('click', '.lol', function(){
 			clicked = !clicked;
-			console.log(clicked);
+			// console.log(clicked);
+			var image = $(this);
+			var imgAnimateSrc = image.attr('src').split('_s').join('');
+			$(this).attr('src', imgAnimateSrc)
+			console.log(imgAnimateSrc);
+			// $.ajax({
+			// 	url:queryURL, 
+			// 	method:'GET'
+			// }).done(function(response){
+			// 	for (i = 0; i < 10)
+	  //   		image.attr('src', response.data[i].images.fixed_height.url);
+	  //   	})
 		});
 
 		$(document).on('click', '.buttonTopic', function(){
@@ -50,19 +62,16 @@
 				for(i = 0; i < 10; i++){
 
 				var container = $('<div>').addClass('img-container');
+
         		var image = $('<img>');
 
-        		// this chooses the one that is false because it sees it as not being clicked.  does not change when clicked.
-        		if (clicked == false){
-        			image.attr('src', response.data[i].images.fixed_height_still.url);
-        		} else {
-        			image.attr('src', response.data[i].images.fixed_height.url);
-        		}
+        		image.attr('src', response.data[i].images.fixed_height_still.url);
 
         		image.addClass('lol');
-        		container.append(image);
-        		container.append('<p>Rating: ' + response.data[i].rating + '</p>');
 
+        		container.append(image);
+
+        		container.append('<p>Rating: ' + response.data[i].rating + '</p>');
 
         		$('#response').append(container);
         		
