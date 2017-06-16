@@ -22,34 +22,15 @@
 	</div>
 
 	<script type="text/javascript">
-		var topics = ['big lebowski', 'game of thrones', 'star wars', 'batman', 'x-men', 'fargo', 'pulp fiction']
+		var topics = ['denzel washington', 'big lebowski', 'game of thrones', 'star wars', 'batman', 'x-men', 'fargo', 'pulp fiction']
+
 		for(i = 0; i < topics.length; i++){
 			var button = $('<button class=buttonTopic>').text(topics[i]);
 			$('#buttons').append(button);
 		};
 
 		var topicChoice = '';
-
 		var queryURL = '';
-
-		var clicked = false;
-
-
-		$(document).on('click', '.lol', function(){
-			clicked = !clicked;
-			// console.log(clicked);
-			var image = $(this);
-			var imgAnimateSrc = image.attr('src').split('_s').join('');
-			$(this).attr('src', imgAnimateSrc)
-			console.log(imgAnimateSrc);
-			// $.ajax({
-			// 	url:queryURL, 
-			// 	method:'GET'
-			// }).done(function(response){
-			// 	for (i = 0; i < 10)
-	  //   		image.attr('src', response.data[i].images.fixed_height.url);
-	  //   	})
-		});
 
 		$(document).on('click', '.buttonTopic', function(){
 			$('#response').html('');
@@ -60,26 +41,33 @@
 				method:'GET'
 			}).done(function(response){
 				for(i = 0; i < 10; i++){
-
 				var container = $('<div>').addClass('img-container');
-
         		var image = $('<img>');
-
         		image.attr('src', response.data[i].images.fixed_height_still.url);
-
-        		image.addClass('lol');
-
+        		image.attr('data-still', response.data[i].images.fixed_height_still.url);
+        		image.attr('data-animate', response.data[i].images.fixed_height.url);
+        		image.attr('state', 'still');
+        		image.addClass('gif');
         		container.append(image);
-
         		container.append('<p>Rating: ' + response.data[i].rating + '</p>');
-
-        		$('#response').append(container);
-        		
+        		$('#response').append(container);        		
       			};	
 			});
 		});
-		
-		
+
+		$(document).on('click', '.gif', function(){
+
+			if ($(this).attr('state') === 'still'){
+			$(this).attr('src', $(this).attr('data-animate'));
+			$(this).attr('state', 'animate');
+			} else {
+				// make it so url turns back to _s in middle
+			$(this).attr('src', $(this).attr('data-still'));
+			$(this).attr('state', 'still');
+			}
+		});
+
+
 
 		$("#add-movie").on("click", function() {
         // This function below prevents the page from reloading
