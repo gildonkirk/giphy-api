@@ -1,9 +1,19 @@
+header {
+	text-align: center;
+	font-family: 'Dosis', sans-serif;
+	font-size: 57pt;
+}
+
+.container {
+	margin: 0 10%;
+}
+
 #movie-form {
 	position: relative;
 }
 
 label, #add-movie {
-	margin-left: 10px;
+/*	margin-left: 10px;*/
 }
 
 label{
@@ -12,17 +22,17 @@ label{
 }
 
 #movie-input {
-	margin-left: 10px;
+/*	margin-left: 10px;*/
 }
 
 #add-movie {
-	margin: 0px 0 10px 3px;
+	margin: 0px 0 0px 3px;
     position: absolute;
     top: 18.5px;
 }
 
 #buttons {
-	margin: 10px 0 15px 10px;
+	margin: 10px 0 15px 0px;
 }
 
 .buttonTopic {
@@ -32,12 +42,14 @@ label{
 .img-container {
 	display: inline-block;
 	float: left;
-	margin: 0 10px;
+	/*margin: 0 10px;*/
 }
 
 
 p {
 	text-align: center;
 }
+
+
 
 

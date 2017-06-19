@@ -27,7 +27,7 @@ $(document).on('click', '.buttonTopic', function(){
 		container.append(image);
 		container.append('<p>Rating: ' + response.data[i].rating + '</p>');
 		$('#response').append(container);        		
-			};	
+		};	
 	});
 });
 
