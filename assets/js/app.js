@@ -9,7 +9,7 @@ var topicChoice = '';
 var queryURL = '';
 
 $(document).on('click', '.buttonTopic', function(){
-	$('#response').html('');
+	$('.response').html('');
 	var topicChoice = $(this).text();
 	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topicChoice + "&api_key=dc6zaTOxFJmzC"
 	$.ajax({
@@ -17,16 +17,24 @@ $(document).on('click', '.buttonTopic', function(){
 		method:'GET'
 	}).done(function(response){
 		for(i = 0; i < 10; i++){
-		var container = $('<div>').addClass('img-container');
-		var image = $('<img>');
-		image.attr('src', response.data[i].images.fixed_height_still.url);
-		image.attr('data-still', response.data[i].images.fixed_height_still.url);
-		image.attr('data-animate', response.data[i].images.fixed_height.url);
-		image.attr('state', 'still');
-		image.addClass('gif');
-		container.append(image);
-		container.append('<p class="label">Rating: ' + response.data[i].rating + '</p>');
-		$('#response').append(container);        		
+			var container = $('<div>').addClass('col-xs-12 col-md-4 img-container');
+			var image = $('<img>').addClass('img-responsive center-block');
+			image.attr('src', response.data[i].images.fixed_height_still.url);
+			image.attr('data-still', response.data[i].images.fixed_height_still.url);
+			image.attr('data-animate', response.data[i].images.fixed_height.url);
+			image.attr('state', 'still');
+			image.addClass('gif');
+			container.append(image);
+			container.append('<p class="col-xs-12 label">Rating: ' + response.data[i].rating + '</p>');
+			if (i <= 2){
+				$('#response1').append(container);
+			} else if (i <= 5) {
+				$('#response2').append(container);
+			} else if (i <= 8) {
+				$('#response3').append(container); 
+			} else {
+				$('#response4').append(container);
+			}
 		};	
 	});
 });
@@ -42,8 +50,6 @@ $(document).on('click', '.gif', function(){
 	$(this).attr('state', 'still');
 	}
 });
-
-
 
 $("#add-movie").on("click", function() {
 	// This function below prevents the page from reloading

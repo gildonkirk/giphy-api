@@ -1,28 +1,102 @@
 body {
-	background-image: url("assets/images/slash_it.png");
+	background-image: url("assets/images/cork-wallet.png");
 }
 
 header {
 	text-align: center;
 	font-family: 'Dosis', sans-serif;
 	font-size: 57pt;
-	color: #ffffff;
+	color: #220045;
     background-color: #0BD980;
-    margin: 0 150px;
     padding-bottom: 7px;
+    margin-top: 10px;
+}
+
+.body-container {
+	background-image: url('assets/images/ep_naturalblack.png');
+	margin-top: 20px;
+	min-height: 500px;
+	margin-bottom: 30px;
+    padding-bottom: 50px;
+}
+
+#movie-form {
+	margin: 20px 0 0 0;
+	width: 250px;
+	padding: 0 0 0 70px;
+	position: relative;
+}
+
+.form-control {
+	margin-left: 8px;
+}
+
+.response {
+	padding: 0 75px;
+}
+
+#response1 {
+	margin-top: 20px;
+}
+
+.img-container {
+	background-color: #0F001F;
+    padding: 20px;
+    height: 270px;
+    margin: 0 3px 10px 3px;
+    border: 5px solid #0bd980;
+}
+
+.col-md-4 {
+	width: 32.7%;
+}
+
+.label {
+	font-family: 'Roboto', sans-serif;
+	color: #ffffff;
+	margin-top: 10px;
+	font-size: 12pt;
+}
+
+#movie-input {
+	color: #222222;
+	outline: none;
+}
+
+#add-movie {
+	margin: 0px 0 2px 8px;
+	position: absolute;
+    top: 20.8px;
+    left: 260px;
+}
+
+#buttons {
+	margin: 0 0 0px 75px;
+}
+
+.buttonTopic {
+	margin: 3px 3px 0 0;
+	font-size: 12pt;
 }
 
 button, #add-movie {
 	font-family: 'Roboto', sans-serif;
 	background-color: #FF3C3C;
 	border: 0;
+	color: #222222;
 	border-radius: 15px;
 	padding: .5em .7em;
 	outline: none;
 }
 
+.search {
+	color: #ffffff;
+	margin-top: 20px;
+}
+
 button:hover {
 	background-color: #E02828;
+	color: #ffffff;
 }
 
 #add-movie {
@@ -31,78 +105,18 @@ button:hover {
 
 #add-movie:hover {
 	background-color: #EE7927;
-}
-
-.label {
-	font-family: 'Roboto', sans-serif;
 	color: #ffffff;
-	margin-top: 10px;
-}
-
-.container {
-	margin: 0 200px;
-}
-
-#movie-form {
-	position: relative;
-}
-
-label, #add-movie {
-/*	margin-left: 10px;*/
-}
-
-label{
-    position: absolute;
-    top: 0px;
-}
-
-#movie-input {
-	color: #222222;
-}
-
-#add-movie {
-	margin: 0px 0 0px 3px;
-    position: absolute;
-    top: 24.5px;
-}
-
-#buttons {
-	margin: 10px 0 15px 0px;
-}
-
-.buttonTopic {
-	margin: 3px 3px 0 0;
-	font-size: 12pt;
-}
-
-.img-container {
-	display: inline-block;
-	float: left;
-	margin: 0 10px;
 }
 
 
-p {
-	text-align: center;
-}
 
-@media screen and (max-width: 1080px) {
-	header {
-		margin: 0 70px;
-	}
-
-	.container {
-		margin: 0 8%;
+@media screen and (max-width: 1200px) {
+	.col-md-4 {
+		width: 95%;
 	}
 }
 
-@media screen and (max-width: 930px) {
-	header {
-		margin: 0 20px;
-	}
-}
-
-@media screen and (max-width: 480px) {
+/*@media screen and (max-width: 480px) {
 	header {
 		margin: 0px;
 	}
@@ -112,6 +126,6 @@ p {
 	header {
 		font-size: 50pt;
 	}
-}
+}*/
 
 
