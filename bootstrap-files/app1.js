@@ -17,7 +17,7 @@ $(document).on('click', '.buttonTopic', function(){
 		method:'GET'
 	}).done(function(response){
 		for(i = 0; i < 10; i++){
-			var container = $('<div>').addClass('col-xs-4 img-container');
+			var container = $('<div>').addClass('col-xs-12 col-md-4 img-container');
 			var image = $('<img>').addClass('img-responsive center-block');
 			image.attr('src', response.data[i].images.fixed_height_still.url);
 			image.attr('data-still', response.data[i].images.fixed_height_still.url);
