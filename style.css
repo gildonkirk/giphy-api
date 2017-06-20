@@ -22,7 +22,7 @@ button, #add-movie {
 }
 
 button:hover {
-	background-color: #F73232;
+	background-color: #E02828;
 }
 
 #add-movie {
@@ -30,7 +30,7 @@ button:hover {
 }
 
 #add-movie:hover {
-	background-color: #FF8633;
+	background-color: #EE7927;
 }
 
 .label {
