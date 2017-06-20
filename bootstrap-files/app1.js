@@ -51,8 +51,6 @@ $(document).on('click', '.gif', function(){
 	}
 });
 
-
-
 $("#add-movie").on("click", function() {
 	// This function below prevents the page from reloading
 	event.preventDefault(); 

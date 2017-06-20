@@ -20,26 +20,14 @@ header {
     padding-bottom: 50px;
 }
 
-button, #add-movie {
-	font-family: 'Roboto', sans-serif;
-	background-color: #FF3C3C;
-	border: 0;
-	color: #222222;
-	border-radius: 15px;
-	padding: .5em .7em;
-	outline: none;
+#movie-form {
+	margin: 20px 0 0 0;
+	width: 250px;
+	padding: 0 0 0 70px;
 }
 
-button:hover {
-	background-color: #E02828;
-}
-
-#add-movie {
-	background-color: #FFA43F;
-}
-
-#add-movie:hover {
-	background-color: #EE7927;
+.form-control {
+	margin-left: 8px;
 }
 
 .response {
@@ -71,21 +59,17 @@ button:hover {
 	font-size: 12pt;
 }
 
-.search {
-	color: #220045;
-	margin-top: 20px;
-}
-
 #movie-input {
 	color: #222222;
+	outline: none;
 }
 
 #add-movie {
-	margin: 0px 0 0px 3px;
+	margin: 0px 0 2px 8px;
 }
 
 #buttons {
-	margin: 10px 0 0px 0px;
+	margin: 10px 0 0px 75px;
 }
 
 .buttonTopic {
@@ -93,6 +77,34 @@ button:hover {
 	font-size: 12pt;
 }
 
+button, #add-movie {
+	font-family: 'Roboto', sans-serif;
+	background-color: #FF3C3C;
+	border: 0;
+	color: #222222;
+	border-radius: 15px;
+	padding: .5em .7em;
+	outline: none;
+}
+
+.search {
+	color: #ffffff;
+	margin-top: 20px;
+}
+
+button:hover {
+	background-color: #E02828;
+	color: #ffffff;
+}
+
+#add-movie {
+	background-color: #FFA43F;
+}
+
+#add-movie:hover {
+	background-color: #EE7927;
+	color: #ffffff;
+}
 
 
 
