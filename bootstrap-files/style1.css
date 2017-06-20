@@ -8,7 +8,6 @@ header {
 	font-size: 57pt;
 	color: #ffffff;
     background-color: #0BD980;
-    /*margin: 0 150px;*/
     padding-bottom: 7px;
 }
 
@@ -33,27 +32,14 @@ button:hover {
 	background-color: #EE7927;
 }
 
+.response {
+	margin-top: 10px;
+}
+
 .label {
 	font-family: 'Roboto', sans-serif;
 	color: #ffffff;
 	margin-top: 10px;
-}
-
-.container {
-	/*margin: 0 200px;*/
-}
-
-#movie-form {
-	/*position: relative;*/
-}
-
-label, #add-movie {
-/*	margin-left: 10px;*/
-}
-
-label{
-    /*position: absolute;
-    top: 0px;*/
 }
 
 #movie-input {
@@ -62,8 +48,6 @@ label{
 
 #add-movie {
 	margin: 0px 0 0px 3px;
-/*    position: absolute;
-    top: 24.5px;*/
 }
 
 #buttons {
@@ -75,16 +59,6 @@ label{
 	font-size: 12pt;
 }
 
-.img-container {
-/*	display: inline-block;
-	float: left;
-	margin: 0 10px;*/
-}
-
-
-p {
-/*	text-align: center;*/
-}
 
 /*@media screen and (max-width: 1080px) {
 	header {
