@@ -1,0 +1,117 @@
+body {
+	background-image: url("assets/images/slash_it.png");
+}
+
+header {
+	text-align: center;
+	font-family: 'Dosis', sans-serif;
+	font-size: 57pt;
+	color: #ffffff;
+    background-color: #0BD980;
+    /*margin: 0 150px;*/
+    padding-bottom: 7px;
+}
+
+button, #add-movie {
+	font-family: 'Roboto', sans-serif;
+	background-color: #FF3C3C;
+	border: 0;
+	border-radius: 15px;
+	padding: .5em .7em;
+	outline: none;
+}
+
+button:hover {
+	background-color: #E02828;
+}
+
+#add-movie {
+	background-color: #FFA43F;
+}
+
+#add-movie:hover {
+	background-color: #EE7927;
+}
+
+.label {
+	font-family: 'Roboto', sans-serif;
+	color: #ffffff;
+	margin-top: 10px;
+}
+
+.container {
+	/*margin: 0 200px;*/
+}
+
+#movie-form {
+	/*position: relative;*/
+}
+
+label, #add-movie {
+/*	margin-left: 10px;*/
+}
+
+label{
+    /*position: absolute;
+    top: 0px;*/
+}
+
+#movie-input {
+	color: #222222;
+}
+
+#add-movie {
+	margin: 0px 0 0px 3px;
+/*    position: absolute;
+    top: 24.5px;*/
+}
+
+#buttons {
+	margin: 10px 0 0px 0px;
+}
+
+.buttonTopic {
+	margin: 3px 3px 0 0;
+	font-size: 12pt;
+}
+
+.img-container {
+/*	display: inline-block;
+	float: left;
+	margin: 0 10px;*/
+}
+
+
+p {
+/*	text-align: center;*/
+}
+
+/*@media screen and (max-width: 1080px) {
+	header {
+		margin: 0 70px;
+	}
+
+	.container {
+		margin: 0 8%;
+	}
+}
+
+@media screen and (max-width: 930px) {
+	header {
+		margin: 0 20px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	header {
+		margin: 0px;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	header {
+		font-size: 50pt;
+	}
+}*/
+
+
