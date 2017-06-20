@@ -24,6 +24,7 @@ header {
 	margin: 20px 0 0 0;
 	width: 250px;
 	padding: 0 0 0 70px;
+	position: relative;
 }
 
 .form-control {
@@ -31,7 +32,6 @@ header {
 }
 
 .response {
-	margin-top: 10px;
 	padding: 0 75px;
 }
 
@@ -43,8 +43,7 @@ header {
 	background-color: #0F001F;
     padding: 20px;
     height: 270px;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin: 0 3px 10px 3px;
     border: 5px solid #0bd980;
 }
 
@@ -66,10 +65,13 @@ header {
 
 #add-movie {
 	margin: 0px 0 2px 8px;
+	position: absolute;
+    top: 20.8px;
+    left: 260px;
 }
 
 #buttons {
-	margin: 10px 0 0px 75px;
+	margin: 0 0 0px 75px;
 }
 
 .buttonTopic {
@@ -108,13 +110,13 @@ button:hover {
 
 
 
-/*@media screen and (max-width: 930px) {
-	header {
-		margin: 0 20px;
+@media screen and (max-width: 1200px) {
+	.col-md-4 {
+		width: 95%;
 	}
 }
 
-@media screen and (max-width: 480px) {
+/*@media screen and (max-width: 480px) {
 	header {
 		margin: 0px;
 	}
