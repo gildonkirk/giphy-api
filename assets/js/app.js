@@ -1,4 +1,4 @@
-var topics = ['denzel washington', 'big lebowski', 'game of thrones', 'star wars', 'batman', 'x-men', 'fargo', 'pulp fiction', 'samuel l jackson', 'dave chapelle']
+var topics = ['Denzel Washington', 'Big Lebowski', 'Game of Thrones', 'Star Wars', 'Batman', 'X-Men', 'Fargo', 'Pulp Fiction', 'Samuel L Jackson', 'Dave Chapelle']
 
 	for(i = 0; i < topics.length; i++){
 		var button = $('<button class=buttonTopic>').text(topics[i]);
@@ -25,7 +25,7 @@ $(document).on('click', '.buttonTopic', function(){
 		image.attr('state', 'still');
 		image.addClass('gif');
 		container.append(image);
-		container.append('<p>Rating: ' + response.data[i].rating + '</p>');
+		container.append('<p class="label">Rating: ' + response.data[i].rating + '</p>');
 		$('#response').append(container);        		
 		};	
 	});
