@@ -18,10 +18,19 @@ button, #add-movie {
 	border: 0;
 	border-radius: 15px;
 	padding: .5em .7em;
+	outline: none;
+}
+
+button:hover {
+	background-color: #F73232;
 }
 
 #add-movie {
 	background-color: #FFA43F;
+}
+
+#add-movie:hover {
+	background-color: #FF8633;
 }
 
 .label {
@@ -48,7 +57,7 @@ label{
 }
 
 #movie-input {
-/*	margin-left: 10px;*/
+	color: #222222;
 }
 
 #add-movie {
